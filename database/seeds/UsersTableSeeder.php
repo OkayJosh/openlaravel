@@ -2,6 +2,7 @@
 
 use App\User;
 use Illuminate\Database\Seeder;
+use jeremykenedy\LaravelRoles\Models\Role;
 
 class UsersTableSeeder extends Seeder
 {
@@ -13,6 +14,10 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
+        $adminRole = Role::whereName('Admin')->first();
+        $userRole = Role::whereName('User')->first();
+
+        // Seed test admin
         $seededAdminEmail = 'admin@admin.com';
         $user = User::where('email', '=', $seededAdminEmail)->first();
         if ($user === null) {
@@ -20,8 +25,8 @@ class UsersTableSeeder extends Seeder
                 'name'      => $faker->userName,
                 'email'     => $seededAdminEmail,
                 'password'  => Hash::make('password'),
-                'is_admin'  => 1,
             ]);
+            $user->attachRole($adminRole);
             $user->save();
         }
     }

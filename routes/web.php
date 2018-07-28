@@ -8,7 +8,7 @@
 // Authentication Routes...
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
-Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::match(['post', 'get'], '/logout', ['uses' => 'Auth\LoginController@logout'])->name('logout');
 
 // Password Reset Routes...
 Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
@@ -23,7 +23,12 @@ Route::get('submit-project', 'ProjectsController@create');
 Route::post('submit-project', 'ProjectsController@store');
 Route::get('projects/{slug}', 'ProjectsController@show');
 
-Route::group(['prefix' => 'dashboard'], function () {
+/*
+|---------------------------------------------------------------------------
+| Admin Dashboard Routes
+|---------------------------------------------------------------------------
+*/
+Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'role:admin']], function () {
     Route::get('/', 'AdminProjectsController@index');
     Route::get('project/{project}/edit', 'AdminProjectsController@edit')->name('project.edit');
     Route::patch('project/{project}/edit', 'AdminProjectsController@update')->name('project.update');
@@ -41,7 +46,7 @@ Route::group(['prefix' => 'api', 'namespace' => 'API'], function () {
     Route::post('projects', 'ProjectsController@store');
     // Route::get('projects/{slug}', 'ProjectsController@show');
 
-    Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
+    Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
         Route::get('projects', 'AdminProjectsController@index');
         Route::patch('approve-project/{slug}', 'AdminProjectsController@approveProject');
     });
