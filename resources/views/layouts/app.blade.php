@@ -19,23 +19,26 @@
 
   @stack('styles')
 
+  <!--
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-2018687890447015",
+      google_ad_client: "",
       enable_page_level_ads: true
     });
   </script>
-
+  -->
+  <!--
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-82057090-1', 'auto');
+    ga('create', '', 'auto');
     ga('send', 'pageview');
   </script>
+  -->
 </head>
 <body>
   <div id="app">
@@ -68,12 +71,12 @@
       <div class="container">
         <div class="content has-text-centered">
           <p>
-            <a class="handle" href="https://github.com/ammezie/openlaravel">
+            <a class="handle" href="https://github.com/jeremykenedy/openlaravel">
               <span class="icon">
                 <i class="fa fa-github"></i>
               </span>
             </a>
-            <a class="handle" href="https://twitter.com/openlaravel">
+            <a class="handle" href="https://twitter.com/developernator">
               <span class="icon">
                 <i class="fa fa-twitter"></i>
               </span>
@@ -86,7 +89,7 @@
             <a href="https://github.com/ammezie/openlaravel">Open Laravel</a> itself is an open source project built using <a href="https://laravel.com">Laravel</a>. Pull requests are greatly welcomed!
           </p>
           <p>
-            Proudly hosted with <a href="https://m.do.co/c/98e35d32e849">DigitalOcean</a>.
+            Proudly hosted with <a href="https://www.vultr.com/?ref=7388143">VULTR</a>.
           </p>
         </div>
       </div>

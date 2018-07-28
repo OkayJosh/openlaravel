@@ -105,7 +105,7 @@ class AdminProjectsController extends Controller
         $project->save();
 
         // Tweet about the project
-        $this->tweetProject($project);
+        // $this->tweetProject($project);
 
         return back()->with("status", "Project Approved!");
     }

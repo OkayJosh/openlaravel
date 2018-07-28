@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="A repository of open source Laravel projects.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  
+
   <title>Open Laravel | A Repository Of Open Source Projects Built Using Laravel</title>
 
   <link rel="icon" type="image/png" href="{{ asset('images/favicon-32x32.png') }}" sizes="32x32">
@@ -32,6 +32,6 @@
 
     </div>
   </main>
-	
+
 </body>
 </html>
